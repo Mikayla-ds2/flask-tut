@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Flask Blog</title>
-    </head>
-    <body>
-        {% for posts in posts %}
-            <h1>{{  posts.title }}</h1>
-            <p>By {{ posts.author }} on {{ posts.date }}</p>
-            <p>{{ posts.content }}</p>
-        {% endfor %}
-    </body>
-</html>
+{% extends "layouts.html" %}
+{% block content %}
+    {% for posts in posts %}
+        <h1>{{  posts.title }}</h1>
+        <p>By {{ posts.author }} on {{ posts.date }}</p>
+        <p>{{ posts.content }}</p>
+    {% endfor %}
+{% endblock content %} <!-- to be explicit about ending the content block -->
+
